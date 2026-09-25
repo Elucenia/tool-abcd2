@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Alteração de fala por 30 min, sem outros fatores: 2 pontos (baixo)",
+    "input": {
+      "clinica": "1",
+      "duracao": "1"
+    },
+    "expected": {
+      "score": 2,
+      "level": "low"
+    },
+    "originalInput": {
+      "clinica": "1",
+      "duracao": "1"
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "70 anos, PA 160/95, fraqueza por 5 min: 4 pontos (moderado, limite)",
+    "input": {
+      "idade": true,
+      "pa": true,
+      "clinica": "2",
+      "duracao": "0"
+    },
+    "expected": {
+      "score": 4,
+      "level": "mid",
+      "verdict": "4,1%"
+    },
+    "originalInput": {
+      "idade": true,
+      "pa": true,
+      "clinica": "2",
+      "duracao": "0"
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "Todos os fatores: 7 pontos (alto)",
+    "input": {
+      "idade": true,
+      "pa": true,
+      "clinica": "2",
+      "duracao": "2",
+      "dm": true
+    },
+    "expected": {
+      "score": 7,
+      "level": "high",
+      "verdict": "8,1%"
+    },
+    "originalInput": {
+      "idade": true,
+      "pa": true,
+      "clinica": "2",
+      "duracao": "2",
+      "dm": true
+    },
+    "expandedZeroOptions": []
+  }
+]
