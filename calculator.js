@@ -1,11 +1,11 @@
-/* tool-abcd2 · Elucenia · https://github.com/Elucenia/tool-abcd2
-   Copyright (c) 2026 Elucenia · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
+/* tool-abcd2 · ELUCENIA · https://github.com/Elucenia/tool-abcd2
+   Copyright (c) 2026 ELUCENIA · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
    Standalone integration. Package metadata and rights: README.md. */
 (function(root){'use strict';
 function freeze(value){if(value&&typeof value==='object'){for(const item of Object.values(value))freeze(item);Object.freeze(value);}return value;}
 const TOOL=freeze({"id":"abcd2","title":"Escore ABCD²","fields":[["idade","Idade ≥ 60 anos","chk",{"pts":1}],["pa","Pressão arterial ≥ 140/90 mmHg na primeira avaliação","chk",{"pts":1}],["clinica","Manifestação clínica","radio",{"opts":{"0":"Outros sintomas","1":"Alteração da fala sem fraqueza","2":"Fraqueza unilateral"}}],["duracao","Duração dos sintomas","radio",{"opts":{"0":"&lt; 10 min","1":"10 a 59 min","2":"≥ 60 min"}}],["dm","Diabetes","chk",{"pts":1}]],"config":{"unit":"de 7","label":"ABCD²","fields":[["idade","chk",1],["pa","chk",1],["clinica","radio",0],["duracao","radio",0],["dm","chk",1]],"bands":[[0,"low","Baixo risco: AVC em 2 dias de 1,0%","7 dias: 1,2% · 90 dias: 3,1%."],[4,"mid","Risco moderado: AVC em 2 dias de 4,1%","7 dias: 5,9% · 90 dias: 9,8%."],[6,"high","Alto risco: AVC em 2 dias de 8,1%","7 dias: 11,7% · 90 dias: 17,8%."]]},"reviewStatus":"needs-review","clinicalValidation":"not-performed"});
 const window={};
-/* Elucenia arithmetic registry. No DOM access, storage, telemetry or network requests. */
+/* ELUCENIA arithmetic registry. No DOM access, storage, telemetry or network requests. */
 (function(root){
   'use strict';
   const CALC={fn:Object.create(null)};
