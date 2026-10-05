@@ -1,0 +1,171 @@
+[
+  {
+    "name": "Reject null input",
+    "input": null,
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": null
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject array input",
+    "input": [],
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": null
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject string input",
+    "input": "invalid",
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": null
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject numeric input",
+    "input": 1,
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": null
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid boolean idade",
+    "input": {
+      "clinica": "1",
+      "duracao": "1",
+      "idade": "2",
+      "pa": false,
+      "dm": false
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid boolean pa",
+    "input": {
+      "clinica": "1",
+      "duracao": "1",
+      "idade": false,
+      "pa": "2",
+      "dm": false
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "pa"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field clinica",
+    "input": {
+      "duracao": "1",
+      "idade": false,
+      "pa": false,
+      "dm": false
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "clinica"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field clinica",
+    "input": {
+      "clinica": "",
+      "duracao": "1",
+      "idade": false,
+      "pa": false,
+      "dm": false
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "clinica"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject undocumented option clinica",
+    "input": {
+      "clinica": "__ELUCENIA_INVALID_OPTION__",
+      "duracao": "1",
+      "idade": false,
+      "pa": false,
+      "dm": false
+    },
+    "expected": {
+      "code": "INVALID_OPTION",
+      "field": "clinica"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field duracao",
+    "input": {
+      "clinica": "1",
+      "idade": false,
+      "pa": false,
+      "dm": false
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "duracao"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field duracao",
+    "input": {
+      "clinica": "1",
+      "duracao": "",
+      "idade": false,
+      "pa": false,
+      "dm": false
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "duracao"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject undocumented option duracao",
+    "input": {
+      "clinica": "1",
+      "duracao": "__ELUCENIA_INVALID_OPTION__",
+      "idade": false,
+      "pa": false,
+      "dm": false
+    },
+    "expected": {
+      "code": "INVALID_OPTION",
+      "field": "duracao"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid boolean dm",
+    "input": {
+      "clinica": "1",
+      "duracao": "1",
+      "idade": false,
+      "pa": false,
+      "dm": "2"
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "dm"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  }
+]

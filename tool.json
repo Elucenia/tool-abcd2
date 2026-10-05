@@ -3,30 +3,26 @@
     "id": "abcd2",
     "title": "Escore ABCD²",
     "short": "Risco de AVC precoce após AIT",
+    "desc": "Calculadora ABCD²: risco de AVC em 2, 7 e 90 dias após um ataque isquêmico transitório (AIT), a partir de idade, pressão, clínica, duração e diabetes.",
+    "lead": "Estima o risco de AVC nos primeiros dias depois de um ataque isquêmico transitório, com dados clínicos disponíveis no primeiro atendimento.",
+    "kind": "Escore",
     "spec": [
       "neurologia",
       "medicina-de-emergencia",
       "clinica-medica"
     ],
-    "tier": 1,
-    "desc": "Calculadora ABCD²: risco de AVC em 2, 7 e 90 dias após um ataque isquêmico transitório (AIT), a partir de idade, pressão, clínica, duração e diabetes.",
-    "lead": "Estima o risco de AVC nos primeiros dias depois de um ataque isquêmico transitório, com dados clínicos disponíveis no primeiro atendimento.",
     "fields": [
       [
         "idade",
         "Idade ≥ 60 anos",
         "chk",
-        {
-          "pts": 1
-        }
+        {}
       ],
       [
         "pa",
         "Pressão arterial ≥ 140/90 mmHg na primeira avaliação",
         "chk",
-        {
-          "pts": 1
-        }
+        {}
       ],
       [
         "clinica",
@@ -56,73 +52,10 @@
         "dm",
         "Diabetes",
         "chk",
-        {
-          "pts": 1
-        }
+        {}
       ]
     ],
-    "score": {
-      "label": "ABCD²",
-      "unit": "de 7",
-      "bands": [
-        [
-          0,
-          "low",
-          "Baixo risco: AVC em 2 dias de 1,0%",
-          "7 dias: 1,2% · 90 dias: 3,1%."
-        ],
-        [
-          4,
-          "mid",
-          "Risco moderado: AVC em 2 dias de 4,1%",
-          "7 dias: 5,9% · 90 dias: 9,8%."
-        ],
-        [
-          6,
-          "high",
-          "Alto risco: AVC em 2 dias de 8,1%",
-          "7 dias: 11,7% · 90 dias: 17,8%."
-        ]
-      ]
-    },
     "formula": "<p><strong>A</strong>ge (idade ≥ 60) 1 · <strong>B</strong>lood pressure (≥ 140/90) 1 · <strong>C</strong>línica: fraqueza unilateral 2, fala sem fraqueza 1 · <strong>D</strong>uração: ≥ 60 min 2, 10 a 59 min 1 · <strong>D</strong>iabetes 1. Total: 0 a 7.</p>",
-    "table": [
-      [
-        "Pontos",
-        "Risco",
-        "AVC em 2 dias",
-        "AVC em 7 dias",
-        "AVC em 90 dias"
-      ],
-      [
-        "0 a 3",
-        "Baixo",
-        "1,0%",
-        "1,2%",
-        "3,1%"
-      ],
-      [
-        "4 a 5",
-        "Moderado",
-        "4,1%",
-        "5,9%",
-        "9,8%"
-      ],
-      [
-        "6 a 7",
-        "Alto",
-        "8,1%",
-        "11,7%",
-        "17,8%"
-      ]
-    ],
-    "table_note": "Coortes de validação combinadas de Johnston 2007.",
-    "tips": [
-      "Um ABCD² baixo não dispensa a investigação: estenose carotídea sintomática e fibrilação atrial podem estar presentes com qualquer pontuação e mudam a conduta.",
-      "A investigação vascular (imagem cerebral, vasos cervicais, ECG) deve ser feita em até 24 a 48 h, independentemente do escore, sempre que o AIT for provável.",
-      "O escore pressupõe que o evento foi um AIT: sintomas isolados como tontura, síncope ou confusão raramente são AIT e inflam o número de “baixo risco”.",
-      "Déficit que ainda persiste não é AIT: trate como AVC agudo e avalie reperfusão."
-    ],
     "sources": [
       [
         "Johnston SC et al. Validation and refinement of scores to predict very early stroke risk after transient ischaemic attack. Lancet, 2007.",
@@ -171,59 +104,6 @@
         }
       ]
     ],
-    "kind": "Escore",
-    "config": {
-      "unit": "de 7",
-      "label": "ABCD²",
-      "fields": [
-        [
-          "idade",
-          "chk",
-          1
-        ],
-        [
-          "pa",
-          "chk",
-          1
-        ],
-        [
-          "clinica",
-          "radio",
-          0
-        ],
-        [
-          "duracao",
-          "radio",
-          0
-        ],
-        [
-          "dm",
-          "chk",
-          1
-        ]
-      ],
-      "bands": [
-        [
-          0,
-          "low",
-          "Baixo risco: AVC em 2 dias de 1,0%",
-          "7 dias: 1,2% · 90 dias: 3,1%."
-        ],
-        [
-          4,
-          "mid",
-          "Risco moderado: AVC em 2 dias de 4,1%",
-          "7 dias: 5,9% · 90 dias: 9,8%."
-        ],
-        [
-          6,
-          "high",
-          "Alto risco: AVC em 2 dias de 8,1%",
-          "7 dias: 11,7% · 90 dias: 17,8%."
-        ]
-      ]
-    },
-    "clinicalReview": "pending",
     "arithmeticTest": {
       "status": "passed",
       "testedAt": "2026-09-25",
@@ -232,17 +112,443 @@
       "failures": []
     },
     "independentArithmeticTest": {
-      "status": "not-tested",
-      "testedAt": null,
-      "total": 0,
-      "passed": 0,
-      "cases": []
+      "status": "passed",
+      "testedAt": "2026-10-04T16:56:01.107Z",
+      "total": 72,
+      "passed": 72,
+      "sourceRowCount": 72,
+      "uniqueApiInputCount": 72,
+      "sourceContextCount": 72,
+      "embeddedCasesAreSubset": true,
+      "embeddedCaseCount": 4,
+      "caseStorage": {
+        "mode": "complete-downloadable-bank-with-inline-subset",
+        "file": "independent-source-cases.json",
+        "sha256": "412fb0e5b8d19a052a7268b70c92b9e75aeb227c8b1c6f06ff084028dd93cea3",
+        "total": 72,
+        "bankRowCount": 72,
+        "uniqueApiInputCount": 72,
+        "sourceContextCount": 72,
+        "expectedEvidence": [
+          {
+            "file": "reports/review-20261003/eight-point-total-independent-expectations-publication-final26.json",
+            "sha256": "8cf68c5141b705cb0ac5cf5f1e06703b9bd76824beea212df5d343f8fd688c58"
+          },
+          {
+            "file": "reports/review-20261003/eight-risk-independent-expectations-final26.json",
+            "sha256": "f5e7d0e09fb4dadaa01dd489cbca1ad3ee8e847771b8409947f3fc43ad7f4a82"
+          }
+        ],
+        "obtainedEvidence": {
+          "file": "reports/review-20261003/eight-point-total-independent-check-publication-final26-r2.json",
+          "sha256": "f22416952f317ef50932276df98da8fd5ffe42b9130768b858ef17eaf21d38ce"
+        },
+        "packagingRequirement": "Copy this score-only complete bank into fresh frozen26 packages only after metadata/source composition and independent peer."
+      },
+      "inputIdentity": {
+        "definition": "Distinct JSON input objects within each method after recursively sorting object keys; array order, numeric values and JSON value types preserved. Uses stored input/inputs before implicit default completion, numeric coercion or clinical feature interpretation. Identity across different methods is not collapsed. Repeated scenarios are retained and coverage status is unchanged.",
+        "sourceRows": 72,
+        "uniqueApiInputs": 72,
+        "duplicateRows": 0,
+        "expectationAudit": {
+          "file": "reports/review-20261003/eight-point-total-independent-expectations-publication-final26.json",
+          "sha256": "8cf68c5141b705cb0ac5cf5f1e06703b9bd76824beea212df5d343f8fd688c58"
+        }
+      },
+      "scope": "Exact weighted integer sum of 72 exhaustive represented caller-selected point/binary tuples for abcd2. Raw score only; clinical labels/cutoffs/bands, patient-factor assessment, diagnostic/treatment decisions, risk and cohort probabilities, predictive validity and complete source conformance excluded.",
+      "sources": [
+        {
+          "id": "abcd2",
+          "edition": "Johnston2007 Lancet369:283–292",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17258668/",
+          "doi": "10.1016/S0140-6736(07)60150-0",
+          "access": "Original abstract was read as primary PubMed indexed result. Direct opening returned recaptcha; attempted full-paper mirror failed certificate validation. No direct full-paper or original table review claimed.",
+          "readScope": [
+            "Original abstract Methods/Findings via indexed PubMed result"
+          ],
+          "notVerified": [
+            "Original full-paper table and explicit systolic-OR-diastolic typography",
+            "Clinical diagnosis of TIA, emergency management or contemporary eligibility",
+            "7/90day probability tables, calibration and subgroup performance"
+          ],
+          "sourceComponent": "Selected integer point sum only; detailed clinical cohort/band facts remain in the frozen original source review."
+        }
+      ],
+      "evidencePath": "reports/review-20261003/eight-point-total-independent-check-publication-final26-r2.json",
+      "evidenceSha256": "f22416952f317ef50932276df98da8fd5ffe42b9130768b858ef17eaf21d38ce",
+      "originalEvidence": {
+        "file": "reports/review-20261003/eight-risk-independent-source-check-final26.json",
+        "sha256": "b816fcbdbc88a75d30dba462f1d7a1ecfacb49b3d5487709ee9d1bd470c6d832"
+      },
+      "independentPeer": {
+        "status": "passed",
+        "requiredScope": "Metadata/bank/helper peer before root composition and application; clinical approval not inferred.",
+        "recordedAt": "2026-10-04T18:58:09.268Z",
+        "scope": "Existing independent technical complete-bank/metadata/helper peer recorded after guarded source26 application. This status does not certify clinical eligibility, full instrument conformance, professional translation or source rights; no new arithmetic/browser execution is claimed by this metadata amendment.",
+        "previousStatus": {
+          "status": "pending",
+          "requiredScope": "Metadata/bank/helper peer before root composition and application; clinical approval not inferred."
+        },
+        "peer": {
+          "file": "reports/review-20261003/eight-point-total-source-evidence-independent-peer-final26-r2.json",
+          "sha256": "6d1b854d021eef9f0f5916ed7f81a70dc8359dae5824f2508c70d29b33732d5c",
+          "summary": {
+            "checks": 8278,
+            "failed": 0,
+            "methods": 8,
+            "sourceRows": 1132,
+            "uniqueInputs": 1132,
+            "freshExecutions": 3396,
+            "helperAssertions": 6888,
+            "metadataMethods": 128,
+            "metadataRows": 53752,
+            "metadataUnique": 53680,
+            "metadataRepeats": 72
+          },
+          "scope": "Root independent peer of exact46 preimages/afterimages; independently frozen1132 input/expected objects checked before imports; public bank numeric projection excludes untested survival, zones, prose and risk codes. Original862fixtures, fields, methods, versions and approvals retained. Exact helper reversal restores all18 previous scopes;24 fresh Node helper executions replay all8 selected-point components without clinical approval."
+        },
+        "application": {
+          "file": "reports/review-20261003/eight-point-total-source-evidence-application-final26.json",
+          "sha256": "ff192c36cc1774e583fe2b8bcdd2e10b275e774ff633d180534b012cfe5b87e3"
+        },
+        "reviewedBankScope": "Exact weighted integer sum of 72 exhaustive represented caller-selected point/binary tuples for abcd2. Raw score only; clinical labels/cutoffs/bands, patient-factor assessment, diagnostic/treatment decisions, risk and cohort probabilities, predictive validity and complete source conformance excluded.",
+        "currentBinding": {
+          "source26BankSha256": "a2bc89fd6ff2ddc94e4728b445e98c4efa493f5b8788d95c6fd0f015471ef28f",
+          "implementations": [
+            {
+              "file": "apps/website/private/tool-code/abcd2/calculator.js",
+              "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+            },
+            {
+              "file": "apps/dashboard/private/tool-code/abcd2/calculator.js",
+              "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+            },
+            {
+              "file": "apps/command-center/private/tool-code/abcd2/calculator.js",
+              "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+            }
+          ],
+          "subsequentReviewedRebinds": []
+        },
+        "originalFailuresAndScopeQualificationsPreserved": true,
+        "clinicalApproval": "not-performed",
+        "professionalLanguageApproval": "not-performed",
+        "sourceRightsApproval": "not-performed",
+        "fullMethodConformance": "not-performed"
+      },
+      "actualAdapterExecutions": 216,
+      "actualVmExecutions": 216,
+      "implementations": [
+        {
+          "id": "abcd2",
+          "app": "website",
+          "file": "apps/website/private/tool-code/abcd2/calculator.js",
+          "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+        },
+        {
+          "id": "abcd2",
+          "app": "dashboard",
+          "file": "apps/dashboard/private/tool-code/abcd2/calculator.js",
+          "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+        },
+        {
+          "id": "abcd2",
+          "app": "command-center",
+          "file": "apps/command-center/private/tool-code/abcd2/calculator.js",
+          "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+        }
+      ],
+      "qualifications": [
+        "Exact weighted integer sum of 72 exhaustive represented caller-selected point/binary tuples for abcd2. Raw score only; clinical labels/cutoffs/bands, patient-factor assessment, diagnostic/treatment decisions, risk and cohort probabilities, predictive validity and complete source conformance excluded.",
+        "All862 historical fixtures and every field/formula/version/approval unchanged by this candidate. Original source/clinical failures and edition warnings are not overwritten.",
+        "Four inline metadata rows are only a subset of the complete hashed downloadable bank. Independent professional/clinical/rights and full-method approvals are not performed."
+      ],
+      "clinicalApproval": "not-performed",
+      "professionalLanguageApproval": "not-performed",
+      "sourceRightsApproval": "not-performed",
+      "fullMethodConformance": "not-performed",
+      "publicCandidateBankOmitted": true
+    },
+    "methodVersion": "ABCD 2/Johnston 2007:idade/PA/clínica/duração/diabetes, total 0–7",
+    "implementationVersion": "abcd2@native-2026-10-03+e592c93953b6",
+    "currentMethodSource": "https://pubmed.ncbi.nlm.nih.gov/17258668/",
+    "versionEvidence": {
+      "status": "variant-and-source-edition-recorded",
+      "checkedAt": "2026-10-03",
+      "implementedVariant": "A ge (idade ≥ 60) 1 · B lood pressure (≥ 140/90) 1 · C línica: fraqueza unilateral 2, fala sem fraqueza 1 · D uração: ≥ 60 min 2, 10 a 59 min 1 · D iabetes 1. Total: 0 a 7.",
+      "inputContract": {
+        "fields": [
+          {
+            "key": "idade",
+            "label": "Idade ≥ 60 anos",
+            "type": "chk",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "pa",
+            "label": "Pressão arterial ≥ 140/90 mmHg na primeira avaliação",
+            "type": "chk",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "clinica",
+            "label": "Manifestação clínica",
+            "type": "radio",
+            "optional": false,
+            "options": {
+              "0": "Outros sintomas",
+              "1": "Alteração da fala sem fraqueza",
+              "2": "Fraqueza unilateral"
+            }
+          },
+          {
+            "key": "duracao",
+            "label": "Duração dos sintomas",
+            "type": "radio",
+            "optional": false,
+            "options": {
+              "0": "&lt; 10 min",
+              "1": "10 a 59 min",
+              "2": "≥ 60 min"
+            }
+          },
+          {
+            "key": "dm",
+            "label": "Diabetes",
+            "type": "chk",
+            "optional": false,
+            "options": null
+          }
+        ],
+        "hash": "e68e4136ad692ef48e0716ffff9be0a634e9a611d20d839dd6bb547dd41ac14b"
+      },
+      "sourceEditions": [
+        {
+          "citation": "Johnston SC et al. Validation and refinement of scores to predict very early stroke risk after transient ischaemic attack. Lancet, 2007.",
+          "url": "https://doi.org/10.1016/S0140-6736(07)60150-0",
+          "class": "primary-publication-abstract-or-metadata-read",
+          "publicationEditionConfirmed": true,
+          "fullTextRetrieved": false,
+          "formulaConformance": "not-assessed",
+          "publication": {
+            "title": "Validation and refinement of scores to predict very early stroke risk after transient ischaemic attack.",
+            "year": "2007",
+            "firstPublicationDate": "2007-01-01",
+            "doi": "10.1016/s0140-6736(07)60150-0",
+            "pmid": "17258668",
+            "journal": "Lancet (London, England)",
+            "authors": "Johnston SC, Rothwell PM, Nguyen-Huynh MN, Giles MF, Elkins JS, Bernstein AL, Sidney S."
+          },
+          "primaryPublicationUrl": "https://pubmed.ncbi.nlm.nih.gov/17258668/",
+          "abstractAvailable": true,
+          "fullTextSha256": null,
+          "abstractSha256": "c82b49c969a3110f7b6da5aaa277947616876879140e7fe88f5fae0ad3d63324",
+          "matchedBy": "exact-DOI-or-PMID"
+        }
+      ],
+      "publicationEditionConfirmed": true,
+      "fullFormulaConformanceReviewed": false,
+      "formulaConformance": "Not established by bibliographic identity or automatic full-text retrieval; retain independent arithmetic and clinical review as separate evidence.",
+      "independentArithmetic": {
+        "status": "passed",
+        "testedAt": "2026-10-04T16:56:01.107Z",
+        "total": 72,
+        "passed": 72,
+        "sourceRowCount": 72,
+        "uniqueApiInputCount": 72,
+        "sourceContextCount": 72,
+        "embeddedCasesAreSubset": true,
+        "embeddedCaseCount": 4,
+        "caseStorage": {
+          "mode": "complete-downloadable-bank-with-inline-subset",
+          "file": "independent-source-cases.json",
+          "sha256": "412fb0e5b8d19a052a7268b70c92b9e75aeb227c8b1c6f06ff084028dd93cea3",
+          "total": 72,
+          "bankRowCount": 72,
+          "uniqueApiInputCount": 72,
+          "sourceContextCount": 72,
+          "expectedEvidence": [
+            {
+              "file": "reports/review-20261003/eight-point-total-independent-expectations-publication-final26.json",
+              "sha256": "8cf68c5141b705cb0ac5cf5f1e06703b9bd76824beea212df5d343f8fd688c58"
+            },
+            {
+              "file": "reports/review-20261003/eight-risk-independent-expectations-final26.json",
+              "sha256": "f5e7d0e09fb4dadaa01dd489cbca1ad3ee8e847771b8409947f3fc43ad7f4a82"
+            }
+          ],
+          "obtainedEvidence": {
+            "file": "reports/review-20261003/eight-point-total-independent-check-publication-final26-r2.json",
+            "sha256": "f22416952f317ef50932276df98da8fd5ffe42b9130768b858ef17eaf21d38ce"
+          },
+          "packagingRequirement": "Copy this score-only complete bank into fresh frozen26 packages only after metadata/source composition and independent peer."
+        },
+        "inputIdentity": {
+          "definition": "Distinct JSON input objects within each method after recursively sorting object keys; array order, numeric values and JSON value types preserved. Uses stored input/inputs before implicit default completion, numeric coercion or clinical feature interpretation. Identity across different methods is not collapsed. Repeated scenarios are retained and coverage status is unchanged.",
+          "sourceRows": 72,
+          "uniqueApiInputs": 72,
+          "duplicateRows": 0,
+          "expectationAudit": {
+            "file": "reports/review-20261003/eight-point-total-independent-expectations-publication-final26.json",
+            "sha256": "8cf68c5141b705cb0ac5cf5f1e06703b9bd76824beea212df5d343f8fd688c58"
+          }
+        },
+        "scope": "Exact weighted integer sum of 72 exhaustive represented caller-selected point/binary tuples for abcd2. Raw score only; clinical labels/cutoffs/bands, patient-factor assessment, diagnostic/treatment decisions, risk and cohort probabilities, predictive validity and complete source conformance excluded.",
+        "sources": [
+          {
+            "id": "abcd2",
+            "edition": "Johnston2007 Lancet369:283–292",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17258668/",
+            "doi": "10.1016/S0140-6736(07)60150-0",
+            "access": "Original abstract was read as primary PubMed indexed result. Direct opening returned recaptcha; attempted full-paper mirror failed certificate validation. No direct full-paper or original table review claimed.",
+            "readScope": [
+              "Original abstract Methods/Findings via indexed PubMed result"
+            ],
+            "notVerified": [
+              "Original full-paper table and explicit systolic-OR-diastolic typography",
+              "Clinical diagnosis of TIA, emergency management or contemporary eligibility",
+              "7/90day probability tables, calibration and subgroup performance"
+            ],
+            "sourceComponent": "Selected integer point sum only; detailed clinical cohort/band facts remain in the frozen original source review."
+          }
+        ],
+        "evidencePath": "reports/review-20261003/eight-point-total-independent-check-publication-final26-r2.json",
+        "evidenceSha256": "f22416952f317ef50932276df98da8fd5ffe42b9130768b858ef17eaf21d38ce",
+        "originalEvidence": {
+          "file": "reports/review-20261003/eight-risk-independent-source-check-final26.json",
+          "sha256": "b816fcbdbc88a75d30dba462f1d7a1ecfacb49b3d5487709ee9d1bd470c6d832"
+        },
+        "independentPeer": {
+          "status": "passed",
+          "requiredScope": "Metadata/bank/helper peer before root composition and application; clinical approval not inferred.",
+          "recordedAt": "2026-10-04T18:58:09.268Z",
+          "scope": "Existing independent technical complete-bank/metadata/helper peer recorded after guarded source26 application. This status does not certify clinical eligibility, full instrument conformance, professional translation or source rights; no new arithmetic/browser execution is claimed by this metadata amendment.",
+          "previousStatus": {
+            "status": "pending",
+            "requiredScope": "Metadata/bank/helper peer before root composition and application; clinical approval not inferred."
+          },
+          "peer": {
+            "file": "reports/review-20261003/eight-point-total-source-evidence-independent-peer-final26-r2.json",
+            "sha256": "6d1b854d021eef9f0f5916ed7f81a70dc8359dae5824f2508c70d29b33732d5c",
+            "summary": {
+              "checks": 8278,
+              "failed": 0,
+              "methods": 8,
+              "sourceRows": 1132,
+              "uniqueInputs": 1132,
+              "freshExecutions": 3396,
+              "helperAssertions": 6888,
+              "metadataMethods": 128,
+              "metadataRows": 53752,
+              "metadataUnique": 53680,
+              "metadataRepeats": 72
+            },
+            "scope": "Root independent peer of exact46 preimages/afterimages; independently frozen1132 input/expected objects checked before imports; public bank numeric projection excludes untested survival, zones, prose and risk codes. Original862fixtures, fields, methods, versions and approvals retained. Exact helper reversal restores all18 previous scopes;24 fresh Node helper executions replay all8 selected-point components without clinical approval."
+          },
+          "application": {
+            "file": "reports/review-20261003/eight-point-total-source-evidence-application-final26.json",
+            "sha256": "ff192c36cc1774e583fe2b8bcdd2e10b275e774ff633d180534b012cfe5b87e3"
+          },
+          "reviewedBankScope": "Exact weighted integer sum of 72 exhaustive represented caller-selected point/binary tuples for abcd2. Raw score only; clinical labels/cutoffs/bands, patient-factor assessment, diagnostic/treatment decisions, risk and cohort probabilities, predictive validity and complete source conformance excluded.",
+          "currentBinding": {
+            "source26BankSha256": "a2bc89fd6ff2ddc94e4728b445e98c4efa493f5b8788d95c6fd0f015471ef28f",
+            "implementations": [
+              {
+                "file": "apps/website/private/tool-code/abcd2/calculator.js",
+                "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+              },
+              {
+                "file": "apps/dashboard/private/tool-code/abcd2/calculator.js",
+                "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+              },
+              {
+                "file": "apps/command-center/private/tool-code/abcd2/calculator.js",
+                "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+              }
+            ],
+            "subsequentReviewedRebinds": []
+          },
+          "originalFailuresAndScopeQualificationsPreserved": true,
+          "clinicalApproval": "not-performed",
+          "professionalLanguageApproval": "not-performed",
+          "sourceRightsApproval": "not-performed",
+          "fullMethodConformance": "not-performed"
+        },
+        "actualAdapterExecutions": 216,
+        "actualVmExecutions": 216,
+        "implementations": [
+          {
+            "id": "abcd2",
+            "app": "website",
+            "file": "apps/website/private/tool-code/abcd2/calculator.js",
+            "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+          },
+          {
+            "id": "abcd2",
+            "app": "dashboard",
+            "file": "apps/dashboard/private/tool-code/abcd2/calculator.js",
+            "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+          },
+          {
+            "id": "abcd2",
+            "app": "command-center",
+            "file": "apps/command-center/private/tool-code/abcd2/calculator.js",
+            "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+          }
+        ],
+        "qualifications": [
+          "Exact weighted integer sum of 72 exhaustive represented caller-selected point/binary tuples for abcd2. Raw score only; clinical labels/cutoffs/bands, patient-factor assessment, diagnostic/treatment decisions, risk and cohort probabilities, predictive validity and complete source conformance excluded.",
+          "All862 historical fixtures and every field/formula/version/approval unchanged by this candidate. Original source/clinical failures and edition warnings are not overwritten.",
+          "Four inline metadata rows are only a subset of the complete hashed downloadable bank. Independent professional/clinical/rights and full-method approvals are not performed."
+        ],
+        "clinicalApproval": "not-performed",
+        "professionalLanguageApproval": "not-performed",
+        "sourceRightsApproval": "not-performed",
+        "fullMethodConformance": "not-performed",
+        "publicCandidateBankOmitted": true
+      },
+      "clinicalApproval": "not-performed",
+      "translationApproval": "not-performed",
+      "releaseApproval": "not-performed",
+      "implementationHash": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+    },
+    "limits": "Escore prognóstico após um diagnóstico de AIT, estudado principalmente para risco de AVC em 2 dias, com análise adicional em 7 e 90 dias. Não confirma o diagnóstico de AIT. As probabilidades observadas nas coortes originais não representam uma previsão individual universal.",
+    "sourceLimitEvidence": {
+      "checkedAt": "2026-10-04T02:52:02.874Z",
+      "scope": "Targeted source reading and authorial documentation, not full method or clinical approval.",
+      "sourceReviewFile": "remaining-native-population-limits-review.json",
+      "sourceReviewSha256": "ba61a9b120a338c518c34ba9f324558b12580e7f5371ea81304b030b45ea44a5",
+      "readingOutcome": "review-outcome-recorded",
+      "unresolved": [
+        "Critérios completos para diagnóstico de AIT e exclusão de mimetizadores não estão descritos no resumo.",
+        "Não foi conferida calibração prospectiva atual da ELUCENIA."
+      ],
+      "fullMethodConformanceReviewed": false,
+      "clinicalApproval": "not-performed",
+      "professionalLanguageApproval": "not-performed"
     }
   },
-  "review": {
-    "status": "needs-review",
-    "reason": "Revisão documental e clínica independente pendente.",
-    "clinicalValidation": "not-performed"
+  "currentSource": {
+    "file": "apps/website/private/tool-code/abcd2/calculator.js",
+    "bytes": 4833,
+    "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
   },
-  "clinicalValidation": "not-performed"
+  "sourceToolSha256": "8fe412c24b4563b3dc649641269a4b6683beb76928f020f8a0d2a75ef11c145f",
+  "omittedFullReferenceBanks": [
+    {
+      "rows": 4,
+      "sha256": "141ab3db4648c85aa50b041518d364862bc2697c28260ad019c3987b77174cf1",
+      "reason": "Large independent reference bank not bundled; exact evidence scope and file references retained"
+    },
+    {
+      "rows": 4,
+      "sha256": "141ab3db4648c85aa50b041518d364862bc2697c28260ad019c3987b77174cf1",
+      "reason": "Large independent reference bank not bundled; exact evidence scope and file references retained"
+    }
+  ],
+  "clinicalApproval": "not-performed",
+  "professionalLanguageApproval": "not-performed",
+  "sourceRightsApproval": "not-performed"
 }
