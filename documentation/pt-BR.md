@@ -79,3 +79,28 @@ Resultado da fórmula ou classificação. Interpretação, conduta e aplicabilid
 Apache-2.0 aplica-se somente ao código da ELUCENIA. Os instrumentos, publicações, traduções e dados mantêm os direitos dos respectivos titulares. Preserve LICENSE e NOTICE.
 
 ELUCENIA · Felipe Guedes · Copyright © 2026
+
+## Resultados documentados
+
+As informações abaixo preservam as saídas do método para exemplos sintéticos. Não constituem validação clínica independente.
+
+### 1
+
+Baixo risco: AVC em 2 dias de 1,0%
+
+7 dias: 1,2% · 90 dias: 3,1%.
+
+
+### 2
+
+Risco moderado: AVC em 2 dias de 4,1%
+
+7 dias: 5,9% · 90 dias: 9,8%.
+
+
+### 3
+
+Alto risco: AVC em 2 dias de 8,1%
+
+7 dias: 11,7% · 90 dias: 17,8%.
+

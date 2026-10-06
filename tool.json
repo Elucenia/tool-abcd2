@@ -270,7 +270,7 @@
       "publicCandidateBankOmitted": true
     },
     "methodVersion": "ABCD 2/Johnston 2007:idade/PA/clínica/duração/diabetes, total 0–7",
-    "implementationVersion": "abcd2@native-2026-10-03+e592c93953b6",
+    "implementationVersion": "abcd2@native-2026-10-05+ff0adec8f413",
     "currentMethodSource": "https://pubmed.ncbi.nlm.nih.gov/17258668/",
     "versionEvidence": {
       "status": "variant-and-source-edition-recorded",
@@ -512,7 +512,35 @@
       "clinicalApproval": "not-performed",
       "translationApproval": "not-performed",
       "releaseApproval": "not-performed",
-      "implementationHash": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+      "implementationHash": "ff0adec8f413adbb56572974976ee79a209a3870bc850a602a5faad52f5dc1ff",
+      "documentedOutputContract": {
+        "fields": [
+          "level",
+          "verdict",
+          "rows",
+          "note"
+        ],
+        "scope": "Optional documented outputs already produced by the existing scientific method; no new classification or treatment decision.",
+        "sourceExposureReceipt": {
+          "file": "reports/review-20261005-completion/native-result-presentation-r1/applied-output-r1/receipt.json",
+          "sha256": "ad5471530e501b906b966463cef1eb20e9745ac745fc30fb85d3ec4db2a333c3"
+        },
+        "scientificBodiesUnchanged": true,
+        "clinicalApproval": "not-performed",
+        "professionalLanguageApproval": "not-performed"
+      },
+      "technicalBindingHistory": [
+        {
+          "recordedAt": "2026-10-05T23:55:42.176Z",
+          "scope": "Expose existing documented result fields; scientific body and complete input contract unchanged.",
+          "previousImplementationVersion": "abcd2@native-2026-10-03+e592c93953b6",
+          "previousImplementationHash": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be",
+          "implementationHash": "ff0adec8f413adbb56572974976ee79a209a3870bc850a602a5faad52f5dc1ff",
+          "scientificBodySha256": "e85276683115c11c8a08c490b617391606f7137a1aaae50779ecc2e6796ea25d",
+          "metadataContractHash": "e68e4136ad692ef48e0716ffff9be0a634e9a611d20d839dd6bb547dd41ac14b",
+          "exposureReceiptSha256": "ad5471530e501b906b966463cef1eb20e9745ac745fc30fb85d3ec4db2a333c3"
+        }
+      ]
     },
     "limits": "Escore prognóstico após um diagnóstico de AIT, estudado principalmente para risco de AVC em 2 dias, com análise adicional em 7 e 90 dias. Não confirma o diagnóstico de AIT. As probabilidades observadas nas coortes originais não representam uma previsão individual universal.",
     "sourceLimitEvidence": {
@@ -532,20 +560,20 @@
   },
   "currentSource": {
     "file": "apps/website/private/tool-code/abcd2/calculator.js",
-    "bytes": 4833,
-    "sha256": "e592c93953b62145f53c01871b1b6e1e08722140e2aafe52d9d5e704a84e06be"
+    "bytes": 5038,
+    "sha256": "ff0adec8f413adbb56572974976ee79a209a3870bc850a602a5faad52f5dc1ff"
   },
-  "sourceToolSha256": "8fe412c24b4563b3dc649641269a4b6683beb76928f020f8a0d2a75ef11c145f",
+  "sourceToolSha256": "701df4124e6bf350788a5b8b990c3b1aeeca2bb0605251f8de0f559dacbc571a",
   "omittedFullReferenceBanks": [
     {
       "rows": 4,
       "sha256": "141ab3db4648c85aa50b041518d364862bc2697c28260ad019c3987b77174cf1",
-      "reason": "Large independent reference bank not bundled; exact evidence scope and file references retained"
+      "reason": "Large independent reference bank not bundled; historical proof scope retained"
     },
     {
       "rows": 4,
       "sha256": "141ab3db4648c85aa50b041518d364862bc2697c28260ad019c3987b77174cf1",
-      "reason": "Large independent reference bank not bundled; exact evidence scope and file references retained"
+      "reason": "Large independent reference bank not bundled; historical proof scope retained"
     }
   ],
   "clinicalApproval": "not-performed",

@@ -79,3 +79,28 @@ Formula or classification result. Interpretation, care and applicability depend 
 Apache-2.0 applies only to ELUCENIA code. Rights to instruments, publications, translations and data remain with their respective holders. Preserve LICENSE and NOTICE.
 
 ELUCENIA · Felipe Guedes · Copyright © 2026
+
+## Documented results
+
+The information below preserves the method outputs for synthetic examples. It does not constitute independent clinical validation.
+
+### 1
+
+Low risk: stroke in 2 days of 1.0%
+
+7 days: 1,2% · 90 days: 3,1%.
+
+
+### 2
+
+Moderate risk: stroke in 2 days of 4,1%
+
+7 days: 5,9% · 90 days: 9,8%.
+
+
+### 3
+
+High risk: stroke in 2 days of 8,1%
+
+7 days: 11,7% · 90 days: 17,8%.
+
